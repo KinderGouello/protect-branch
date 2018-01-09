@@ -8,7 +8,10 @@
 /spec/examples.txt
 /test/tmp/
 /test/version_tmp/
-/tmp/
+/db/*.sqlite
+/public/assets*
+/tmp
+/docker/nginx/log
 
 # Used by dotenv library to load environment variables.
 # .env
