@@ -4,18 +4,22 @@ module Web::Controllers::Home
 
     def call(params)
       body = JSON.parse(request.body.read)
-      puts body
+      # puts body
       client = Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
-      client.protect_branch(
-          body['repository']['full_name'],
-          body['pull_request']['base']['ref'],
-          {
-              'enforce_admins' => true,
-              'required_status_checks' => {},
-              'required_pull_request_reviews' => {},
-              'restrictions' => {}
-          }
-        )
+      puts client.protect_branch(
+        body['repository']['full_name'],
+        body['pull_request']['base']['ref'],
+        {
+            :enforce_admins => true,
+            :required_status_checks => {
+              :strict => true,
+              :contexts => [
+                'continuous-integration/travis-ci',
+              ],
+            },
+            :required_pull_request_reviews => {}
+        }
+      )
     end
   end
 end
