@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'hanami',       '~> 1.1'
-gem 'hanami-model', '~> 1.1'
+gem 'hanami', '~> 1.1'
 gem 'octokit', '~> 4.0'
 
 group :development do
