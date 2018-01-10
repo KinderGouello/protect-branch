@@ -1,0 +1,7 @@
+{
+  "name": "ProtectBranch",
+  "description": "",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/KinderGouello/protect-branch",
+  "keywords": ["ruby", "hanami" ]
+}
