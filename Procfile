@@ -1,1 +1,1 @@
-web: bundle exec hanami server
+web: bundle exec hanami server --port ${PORT:-3000}
