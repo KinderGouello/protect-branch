@@ -4,28 +4,10 @@ services:
   app:
     build: .
     ports:
-        - '2300:2300'
-    tty: true
-    networks:
-      - app-network
-
-  nginx:
-    image: nginx
+      - '2300:2300'
     volumes:
-      - .:/var/www/app:rw
-      - ./docker/nginx/conf.d/app.conf:/etc/nginx/conf.d/app.conf:rw
-      - ./docker/nginx/log:/var/log/nginx:rw
-    links:
-      - app
-    ports:
-      - 80:80
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - ./:/usr/src/app
+    tty: true
 
 volumes:
   app:
-  nginx:
