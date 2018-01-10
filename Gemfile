@@ -5,8 +5,6 @@ gem 'hanami',       '~> 1.1'
 gem 'hanami-model', '~> 1.1'
 gem 'octokit', '~> 4.0'
 
-gem 'sqlite3'
-
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
